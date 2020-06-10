@@ -26,25 +26,40 @@ def gg():
 def loggedin(name):
 	print("gg")
 	print(name)
-	query = "INSERT into status (`name`, `stat`) VALUES (%s, %s)"
-	cursorObject.execute(query, (name, "online"))
 
-	sql = "SELECT * from status WHERE stat = 'online';"
+	s = "SELECT name from status;"
+	cursorObject.execute(s)
+	fetched_names = cursorObject.fetchall()
+	print(fetched_names)
+	li = []
+	for i in fetched_names:
+		li.append(i['name'])
+	print(li)
+
+	if name not in li:
+		query = "INSERT into status (`name`, `stat`) VALUES (%s, %s)"
+		cursorObject.execute(query, (name, "online"))
+
+	sql = "SELECT * from status;"
 	cursorObject.execute(sql)
 	result = cursorObject.fetchall()
-
+	print(result)
+	result2 = []
+	for i in result:
+		if i['name'] != 'favicon.io':
+			result2.append(i)
 	# print(result.type)
 	# cursorObject.execute(sqlQuery)
 	# rows = cursorObject.fetchall()
 	# print(rows)
 	connection.commit()
-	return render_template('log.html', result=result, name=name)
+	return render_template('log.html', result=result2, name=name)
 
 
 @check.route('/logout/<name>', methods=['POST'])
 def logout(name):
 	name = name
-	sql = "UPDATE status SET stat='offline' WHERE `name`=(%s)"
+	sql = "DELETE FROM status WHERE `name`=(%s)"
 	cursorObject.execute(sql, (name))
 	# url
 	return redirect("http://0.0.0.0:5002")
