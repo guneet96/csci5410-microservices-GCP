@@ -1,3 +1,4 @@
+import os
 import pymysql.cursors
 from flask import Flask, render_template, url_for, request, session, redirect
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -58,4 +59,4 @@ def log():
 
 if __name__ == "__main__":
 	login.debug = True
-	login.run(host='127.0.0.1', port=5002)
+	login.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5002)))

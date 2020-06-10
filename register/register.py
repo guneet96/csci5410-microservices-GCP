@@ -1,3 +1,4 @@
+import os
 import pymysql.cursors
 from flask import Flask, render_template, url_for, request, session, redirect
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -63,4 +64,5 @@ def reg():
 
 if __name__ == "__main__":
 	register.debug = True
-	register.run(host='0.0.0.0', port=5001)
+	register.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5001)))
+

@@ -1,3 +1,4 @@
+import os
 import pymysql.cursors
 from flask import Flask, render_template, url_for, request, session, redirect
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -46,8 +47,9 @@ def loggedin(name):
 	print(result)
 	result2 = []
 	for i in result:
-		if i['name'] != 'favicon.io':
+		if i['name'] != 'favicon.ico':
 			result2.append(i)
+	print(result2)
 	# print(result.type)
 	# cursorObject.execute(sqlQuery)
 	# rows = cursorObject.fetchall()
@@ -67,5 +69,5 @@ def logout(name):
 
 if __name__ == "__main__":
 	check.debug = True
-	check.run(host='0.0.0.0', port=5004)
+	check.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5004)))
 
