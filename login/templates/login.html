@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+	<h1><p align="center">Login here</p></h1>
+	<div>
+		<form action="/log" method="POST">
+
+		    <label for="email"><b>Email</b></label>
+		    <input type="text" placeholder="Enter Email" name="email" required>
+
+		    <label for="password"><b>Password</b></label>
+		    <input type="password" placeholder="Enter Password" name="password" required>
+
+		    <hr>
+		    <button type="submit" class="loginbtn">Login</button>
+
+		    <br>
+		    <h4 style="color: red;">{{ err }}</h4>
+		</form>
+		<!-- url -->
+		<a href='http://0.0.0.0:5001' type="button">
+         Register here</a>
+	</div>
+</body>
+</html>

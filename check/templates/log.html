@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logged In
+	</title>
+</head>
+<body>
+	<h3><p>Logged In</p></h3>
+	<br>
+	<br>
+	<h4><p>Hi {{ name }}, you are logged in now.</p></h4>
+	<br>
+	<form action="/logout/{{ name }}" method="post">
+		<input type="submit" name="Logout" value="Logout">
+	</form>
+	<br>
+    <p>Here are other users who are online:</p>
+    <p></p>
+    {% for i in result %}
+    	<p>{{ i['name'] }}</p>
+    {% endfor %}
+</body>
+</html>
