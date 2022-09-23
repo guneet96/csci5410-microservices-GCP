@@ -159,7 +159,7 @@ pretty-midi==0.2.9
 prometheus-client==0.7.1
 promise==2.3
 prompt-toolkit==2.0.9
-protobuf==3.11.3
+protobuf==3.18.3
 ptyprocess==0.6.0
 py==1.8.1
 py4j==0.10.7
