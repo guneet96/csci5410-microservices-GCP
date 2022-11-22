@@ -153,7 +153,7 @@ pbr==5.4.5
 pexpect==4.7.0
 phonenumbers==8.11.4
 pickleshare==0.7.5
-Pillow==7.1.1
+Pillow==9.3.0
 pluggy==0.13.1
 pretty-midi==0.2.9
 prometheus-client==0.7.1
