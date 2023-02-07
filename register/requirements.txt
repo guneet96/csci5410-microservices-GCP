@@ -31,7 +31,7 @@ cognitojwt==1.1.0
 colorama==0.4.1
 contextlib2==0.6.0.post1
 crcmod==1.7
-cryptography==2.8
+cryptography==39.0.1
 cycler==0.10.0
 Cython==0.29.14
 dataclasses==0.6
